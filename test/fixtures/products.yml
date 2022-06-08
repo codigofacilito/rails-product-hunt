@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :string
+#  visible     :boolean          default(TRUE)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  slug        :string
+#
+
+one:
+  name: MyString
+  description: MyString
+  visible: false
+
+two:
+  name: MyString
+  description: MyString
+  visible: false

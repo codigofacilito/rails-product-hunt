@@ -1,0 +1,27 @@
+<section class="relative py-10 overflow-x-hidden">
+  <div class="container  mx-auto">
+    <div class="relative flex flex-wrap items-center -mx-4">
+      <div class="relative w-full lg:w-1/2 px-4 pb-12 lg:pb-0">
+        
+          <h2 class="mb-6 lg:mb-10 text-4xl font-semibold font-heading">
+            <%= @product.name %>
+          </h2>
+          <p class="mb-6 lg:mb-10 text-xl text-gray-500">
+            <%= @product.description %>
+          </p>
+          <div class="mb-10 border rounded-lg">
+            <!-- Categories -->
+          </div>
+          
+            <%= link_to 'Editar', edit_product_path(@product), class:"cursor-pointer inline-block  py-4 px-8 leading-none text-white bg-red-600 hover:bg-red-700 font-semibold rounded shadow" %>
+            <%= link_to 'Eliminar', product_path(@product), 
+                data: { turbo_method: :delete, 
+                        turbo_confirm: 'Estas seguro de eliminar el producto?' } 
+            %>
+      </div>
+      <div class="w-full lg:w-1/2 px-4">
+        <!-- Image -->
+      </div>
+    </div>
+  </div>
+</section>

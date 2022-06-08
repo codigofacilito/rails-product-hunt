@@ -1,0 +1,13 @@
+<section class="relative">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-3xl mb-20 mx-auto text-center">
+      <h2 class="mt-8 mb-10 text-4xl font-semibold font-heading">Productos más populares 🦄</h2>
+    </div>
+    <div class="flex flex-wrap -m-3 mb-16">
+        <%= render partial:'product', collection:@products %>
+    </div>
+    <div class="text-center">
+        <a class="px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red-300 rounded transition duration-200" href="#">View More Products</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+<section class="relative">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-3xl mb-20 mx-auto text-center">
+      <h2 class="mt-8 mb-10 text-4xl font-semibold font-heading">
+        Resultado de la busqueda: <%= @q %>
+      </h2>
+    </div>
+    <div class="flex flex-wrap -m-3 mb-16">
+        <%= render partial:'product', collection:@products %>
+  </div>
+</section>
