@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="mx-auto">
+        <div class="py-4 px-8 lg:px-4 mb-4 bg-gray-50 rounded-lg">
+            <p class="text-base"><%= comment.content %></p>
+
+            <p><%= comment.votes.count %></p>
+
+            <%= form_with model:[@product, comment, Vote.new] do |form| %>
+                <%= form.submit '👍', class:"cursor-pointer"%>
+            <% end %>
+        </div>
+    </div>
+</div>
+

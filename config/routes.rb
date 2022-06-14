@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
 
   # get 'products', to:'products#index'
   # get 'products/new', to:'products#new', as: 'new_products'
@@ -12,6 +13,12 @@ Rails.application.routes.draw do
   
   resources :products do
     get 'search', on: :collection # products/search -> products#seach
+    
+    resources :comments, only: [:create] do 
+        resources :votes, only: [:create]
+    end
+
+    resources :votes, only: [:create]
   end
 
   root "main#welcome"

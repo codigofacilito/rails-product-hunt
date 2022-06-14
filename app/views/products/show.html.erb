@@ -10,7 +10,9 @@
             <%= @product.description %>
           </p>
           <div class="mb-10 border rounded-lg">
-            <!-- Categories -->
+            <% @product.categories.each do |category| %>
+                <p class="font-semibold font-heading"><%= category.name %></p>
+            <% end %>
           </div>
           
             <%= link_to 'Editar', edit_product_path(@product), class:"cursor-pointer inline-block  py-4 px-8 leading-none text-white bg-red-600 hover:bg-red-700 font-semibold rounded shadow" %>
@@ -20,8 +22,31 @@
             %>
       </div>
       <div class="w-full lg:w-1/2 px-4">
-        <!-- Image -->
+        <% if @product.image.present? %>
+            <%= image_tag @product.image, class:"w-full h-112 mx-auto mb-6 md:mb-0 rounded-xl object-cover" %>
+        <% end %>
       </div>
     </div>
   </div>
+</section>
+
+<section>
+    <div class="mb-4">
+        <%= form_with model:[@product, Vote.new] do |form| %>
+            <%= form.submit "Votar 👍" , class:"cursor-pointer block lg:inline-block px-5 py-3 text-sm text-center font-semibold text-red-500 hover:text-white hover:bg-red-500 border border-red-500 hover:border-red-600 rounded transition duration-200"%>
+        <% end %>
+    </div>
+    <small>Votos: <%= @product.votes.count %></small>
+</section>
+
+<section>
+    <div class="mb-4 mt-4">
+        <%= render partial:'comments/form' %>
+    </div>
+</section>
+
+<section>
+    <div class="mb-4 mt-4">
+        <%= render partial:'comments/comment', collection:@product.comments, as: :comment  %>
+    </div>
 </section>

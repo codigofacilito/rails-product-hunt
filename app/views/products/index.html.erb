@@ -7,7 +7,9 @@
         <%= render partial:'product', collection:@products %>
     </div>
     <div class="text-center">
-        <a class="px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red-300 rounded transition duration-200" href="#">View More Products</a>
+        <% if @products.next_page.present? %>
+            <%= link_to "Ver más productos", products_path(page:@products.next_page), class:"mb-4 px-6 py-4 text-sm text-white font-semibold bg-red-400 hover:bg-red-300 rounded transition duration-200" %>
+        <% end %>
     </div>
   </div>
 </section>

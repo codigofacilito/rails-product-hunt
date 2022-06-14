@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer          not null, primary key
+#  content    :string
+#  product_id :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  content: MyString
+  product: one
+
+two:
+  content: MyString
+  product: two
